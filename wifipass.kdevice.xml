@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KonnektingDevice xmlns="http://konnekting.de/xml/KonnektingDevice/v0" 
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                  xsi:schemaLocation="http://konnekting.de/xml/KonnektingDevice/v0 http://konnekting.de/xml/KonnektingDevice/KonnektingDeviceV0.xsd">
+    <Device ManufacturerId="1234" DeviceId="1" Revision="0">
+        <ManufacturerName>cguedel</ManufacturerName>
+        <DeviceName>wifipass-knx</DeviceName>
+        <Parameters>
+            <ParameterGroup Name="Network configuration" Id="0">
+                <Parameter Id="0" IdName="comobject-ssid">
+                    <Description>
+                        Set ssid of network using parameters (0) or com object (1). If setting using com object,
+                        selected value below will be used until receiving a new value.
+                    </Description>
+                    <Value Type="uint8" Default="00" Options="00=Set using parameter|01=Set using com object" />
+                </Parameter>
+                <Parameter Id="1" IdName="ssid1">
+                    <Description>SSID of wifi network (Part 1)</Description>
+                    <Value Type="string11" Default="67756573742d7769666900" />
+                </Parameter>
+                <Parameter Id="2" IdName="ssid2">
+                    <Description>SSID of wifi network (Part 2), use if network name exceeds 11 characters</Description>
+                    <Value Type="string11" Default="0000000000000000000000" />
+                </Parameter>
+                
+                <Parameter Id="3" IdName="comobject-security">
+                    <Description>
+                        Set security of network using parameters (0) or com object (1). If setting using com object,
+                        selected value below will be used until receiving a new value.
+                    </Description>
+                    <Value Type="uint8" Default="00" Options="00=Set using parameter|01=Set using com object" />
+                </Parameter>
+                <Parameter Id="4" IdName="security">
+                    <Description>Security of wifi network (choose from WPA, WEP or empty string for no security)</Description>
+                    <Value Type="uint8" Default="00" Options="00=WPA|01=WEP|02=no security" />
+                </Parameter>
+
+                <Parameter Id="5" IdName="comobject-password">
+                    <Description>
+                        Set password of network using parameters (0) or com object (1). If setting using com object,
+                        selected value below will be used until receiving a new value.
+                    </Description>
+                    <Value Type="uint8" Default="01" Options="00=Set using parameter|01=Set using com object" />
+                </Parameter>
+                <Parameter Id="6" IdName="password1">
+                    <Description>Password of wifi network (Part 1)</Description>
+                    <Value Type="string11" Default="616363657373346d650000" />
+                </Parameter>
+                <Parameter Id="7" IdName="password2">
+                    <Description>Password of wifi network (Part 2), use if password length exceeds 11 characters</Description>
+                    <Value Type="string11" Default="0000000000000000000000" />
+                </Parameter>
+            </ParameterGroup>
+        </Parameters>
+        <CommObjects>
+            <CommObject Id="0" IdName="ssid1">
+                <Name>SSID1</Name>
+                <Function>Set wifi ssid (up to 14 characters)</Function>
+                <DataPointType>16.000</DataPointType>
+                <Flags>42</Flags>
+            </CommObject>
+            <CommObject Id="1" IdName="ssid2">
+                <Name>SSID2</Name>
+                <Function>Set wifi ssid, second part (up to 14 characters)</Function>
+                <DataPointType>16.000</DataPointType>
+                <Flags>42</Flags>
+            </CommObject>
+            <CommObject Id="2" IdName="ssid1-status">
+                <Name>SSID1 status</Name>
+                <Function>Get wifi ssid</Function>
+                <DataPointType>16.000</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="3" IdName="ssid2-status">
+                <Name>SSID2 status</Name>
+                <Function>Get wifi ssid, second part</Function>
+                <DataPointType>16.000</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+
+            <CommObject Id="4" IdName="security">
+                <Name>Security</Name>
+                <Function>Set wifi network security</Function>
+                <DataPointType>5.010</DataPointType>
+                <Flags>42</Flags>
+            </CommObject>
+            <CommObject Id="5" IdName="security-status">
+                <Name>Security</Name>
+                <Function>Get configured wifi network security</Function>
+                <DataPointType>5.010</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+
+            <CommObject Id="6" IdName="password1">
+                <Name>Password1</Name>
+                <Function>Set wifi password (up to 14 characters)</Function>
+                <DataPointType>16.000</DataPointType>
+                <Flags>42</Flags>
+            </CommObject>
+            <CommObject Id="7" IdName="password2">
+                <Name>Password2</Name>
+                <Function>Set wifi password, second part (up to 14 characters)</Function>
+                <DataPointType>16.000</DataPointType>
+                <Flags>42</Flags>
+            </CommObject>
+            <CommObject Id="8" IdName="password1-status">
+                <Name>Password1 status</Name>
+                <Function>Get wifi password</Function>
+                <DataPointType>16.000</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="9" IdName="password2-status">
+                <Name>Password2 status</Name>
+                <Function>Get wifi password, second part</Function>
+                <DataPointType>16.000</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+        </CommObjects>
+
+        <Dependencies>
+            <CommObjectDependency CommObjId="0" Test="eq" TestParamId="0" TestValue="01"/>
+            <CommObjectDependency CommObjId="1" Test="eq" TestParamId="0" TestValue="01"/>
+            <CommObjectDependency CommObjId="4" Test="eq" TestParamId="3" TestValue="01"/>
+            <CommObjectDependency CommObjId="6" Test="eq" TestParamId="5" TestValue="01"/>
+            <CommObjectDependency CommObjId="7" Test="eq" TestParamId="5" TestValue="01"/>
+        </Dependencies>
+    </Device>
+</KonnektingDevice>
