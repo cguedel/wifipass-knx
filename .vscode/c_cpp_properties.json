@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\Users\\cg\\Documents\\Arduino\\libraries\\NDEF",
+                "C:\\Users\\cg\\Documents\\Arduino\\libraries\\PN532_HSU",
+                "C:\\Users\\cg\\Documents\\Arduino\\libraries\\PN532",
+                "C:\\Users\\cg\\Documents\\Arduino\\libraries\\Adafruit_GFX_Library",
+                "C:\\Users\\cg\\Documents\\Arduino\\libraries\\GxEPD2\\src",
+                "C:\\Users\\cg\\Documents\\Arduino\\libraries\\QRCode\\src",
+                "C:\\Users\\cg\\AppData\\Local\\Arduino15\\packages\\adafruit\\hardware\\samd\\1.5.2\\**"
+            ],
+            "forcedInclude": [
+                "C:\\Users\\cg\\AppData\\Local\\Arduino15\\packages\\adafruit\\hardware\\samd\\1.5.2\\cores\\arduino\\Arduino.h"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

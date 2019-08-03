@@ -1,0 +1,7 @@
+{
+    "sketch": "main.cpp",
+    "board": "adafruit:samd:adafruit_itsybitsy_m0",
+    "configuration": "usbstack=arduino,debug=off",
+    "port": "COM17",
+    "output": "..\\temp\\build"
+}
