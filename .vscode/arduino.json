@@ -1,5 +1,5 @@
 {
-    "sketch": "main.cpp",
+    "sketch": "application.cpp",
     "board": "adafruit:samd:adafruit_itsybitsy_m0",
     "configuration": "usbstack=arduino,debug=off",
     "port": "COM17",

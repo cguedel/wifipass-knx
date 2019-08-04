@@ -7,7 +7,7 @@
         <DeviceName>wifipass-knx</DeviceName>
         <Parameters>
             <ParameterGroup Name="Network configuration" Id="0">
-                <Parameter Id="0" IdName="comobject-ssid">
+                <Parameter Id="0" IdName="comobject_ssid">
                     <Description>
                         Set ssid of network using parameters (0) or com object (1). If setting using com object,
                         selected value below will be used until receiving a new value.
@@ -22,8 +22,8 @@
                     <Description>SSID of wifi network (Part 2), use if network name exceeds 11 characters</Description>
                     <Value Type="string11" Default="0000000000000000000000" />
                 </Parameter>
-                
-                <Parameter Id="3" IdName="comobject-security">
+
+                <Parameter Id="3" IdName="comobject_security">
                     <Description>
                         Set security of network using parameters (0) or com object (1). If setting using com object,
                         selected value below will be used until receiving a new value.
@@ -35,7 +35,7 @@
                     <Value Type="uint8" Default="00" Options="00=WPA|01=WEP|02=no security" />
                 </Parameter>
 
-                <Parameter Id="5" IdName="comobject-password">
+                <Parameter Id="5" IdName="comobject_password">
                     <Description>
                         Set password of network using parameters (0) or com object (1). If setting using com object,
                         selected value below will be used until receiving a new value.
@@ -65,13 +65,13 @@
                 <DataPointType>16.000</DataPointType>
                 <Flags>42</Flags>
             </CommObject>
-            <CommObject Id="2" IdName="ssid1-status">
+            <CommObject Id="2" IdName="ssid1_status">
                 <Name>SSID1 status</Name>
                 <Function>Get wifi ssid</Function>
                 <DataPointType>16.000</DataPointType>
                 <Flags>52</Flags>
             </CommObject>
-            <CommObject Id="3" IdName="ssid2-status">
+            <CommObject Id="3" IdName="ssid2_status">
                 <Name>SSID2 status</Name>
                 <Function>Get wifi ssid, second part</Function>
                 <DataPointType>16.000</DataPointType>
@@ -84,7 +84,7 @@
                 <DataPointType>5.010</DataPointType>
                 <Flags>42</Flags>
             </CommObject>
-            <CommObject Id="5" IdName="security-status">
+            <CommObject Id="5" IdName="security_status">
                 <Name>Security</Name>
                 <Function>Get configured wifi network security</Function>
                 <DataPointType>5.010</DataPointType>
@@ -103,13 +103,13 @@
                 <DataPointType>16.000</DataPointType>
                 <Flags>42</Flags>
             </CommObject>
-            <CommObject Id="8" IdName="password1-status">
+            <CommObject Id="8" IdName="password1_status">
                 <Name>Password1 status</Name>
                 <Function>Get wifi password</Function>
                 <DataPointType>16.000</DataPointType>
                 <Flags>52</Flags>
             </CommObject>
-            <CommObject Id="9" IdName="password2-status">
+            <CommObject Id="9" IdName="password2_status">
                 <Name>Password2 status</Name>
                 <Function>Get wifi password, second part</Function>
                 <DataPointType>16.000</DataPointType>

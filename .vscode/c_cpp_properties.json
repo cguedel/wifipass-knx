@@ -3,6 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
+                "C:\\Users\\cg\\Documents\\Arduino\\libraries\\FlashStorage\\src",
+                "C:\\Users\\cg\\Documents\\Arduino\\libraries\\KONNEKTING_Device_Library\\src",
                 "C:\\Users\\cg\\Documents\\Arduino\\libraries\\NDEF",
                 "C:\\Users\\cg\\Documents\\Arduino\\libraries\\PN532_HSU",
                 "C:\\Users\\cg\\Documents\\Arduino\\libraries\\PN532",
